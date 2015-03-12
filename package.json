@@ -1,0 +1,16 @@
+{
+  "name": "triangulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Butler",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^1.2.1",
+    "lodash": "^3.5.0",
+    "node-resemble": "^1.1.3"
+  }
+}
