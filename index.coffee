@@ -24,6 +24,8 @@ pointAY = undefined
 pointBX = undefined
 pointBY = undefined
 
+trianglesShouldJoin = false
+
 fs.readFile "source.jpg", (err, file) =>
   source = file
   init()
@@ -59,26 +61,17 @@ draw = ->
       if lastData.misMatchPercentage < currentData.misMatchPercentage
         ctx.drawImage(backup, 0, 0, width, height)
       else
-        # pointAX = secondX
-        # pointAY = secondY
-        # pointBX = lastX
-        # pointBY = lastY
+        if trianglesShouldJoin
+          pointAX = secondX
+          pointAY = secondY
+          pointBX = lastX
+          pointBY = lastY
 
       if times == 0
         output()
       else
         times--
         draw()
-
-  #
-  #    {
-  #      misMatchPercentage : 100, // %
-  #      isSameDimensions: true, // or false
-  #      getImageDataUrl: function(){}
-  #    }
-  #
-
-
 
 output = ->
   fs.writeFile "index.html", "<img src='#{canvas.toDataURL()}'>", ->
