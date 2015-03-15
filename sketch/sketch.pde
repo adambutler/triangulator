@@ -13,6 +13,8 @@ void draw() {
 
   float lastX = random(secondX-range,secondX+range);
   float lastY = random(secondY-range,startY+range);
-  
+   
+  noStroke();
+  fill(255, 211, 80);
   triangle(startX, startY, secondX, secondY, lastX, lastY);
 }
